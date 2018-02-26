@@ -61,7 +61,7 @@ class Header extends Component {
           style={{margin: 20}}
         />
         <AppBar
-          title="Title"
+          title="CRM H-S"
           iconElementLeft={<IconButton><NavigationClose /></IconButton>}
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
         />
