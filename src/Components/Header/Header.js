@@ -1,3 +1,4 @@
+import './Header.css';
 import React, {Component} from 'react';
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
@@ -8,6 +9,18 @@ import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+
+const styles = {
+  labelStyle: {
+    color: 'white',
+  },
+  thumbSwitched: {
+    backgroundColor: '#ff2b6e',
+  },
+  trackSwitched: {
+    backgroundColor: '#FF87AD',
+  },
+}
 
 class Login extends Component {
   static muiName = 'FlatButton';
@@ -59,11 +72,16 @@ class Header extends Component {
           onToggle={this.handleChange}
           labelPosition="right"
           style={{margin: 20}}
+          className= 'toggle'
+          labelStyle={styles.labelStyle}
+          thumbSwitchedStyle={styles.thumbSwitched}
+          trackSwitchedStyle={styles.trackSwitched}
         />
         <AppBar
           title="CRM H-S"
           iconElementLeft={<IconButton><NavigationClose /></IconButton>}
           iconElementRight={this.state.logged ? <Logged /> : <Login />}
+          className='appbar'
         />
       </div>
       </MuiThemeProvider>

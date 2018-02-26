@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+import './App.css';
+import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer';
 import LoginForm from './Components/Login Form/LoginForm' 
 
 class App extends Component {
