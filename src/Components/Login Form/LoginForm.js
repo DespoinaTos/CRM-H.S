@@ -20,6 +20,7 @@ const style = {
   },
 };
 
+
 class LoginForm extends Component {
 
   constructor(props) {
@@ -30,11 +31,16 @@ class LoginForm extends Component {
       password: '',
     }
   }
+
+  signIn() {
+    console.log('State', this.state);
+  }
     
 	render() {
 		return(
 			<MuiThemeProvider>
 				<form className='form'>
+          <h2>Sign In</h2>
 					<TextField
 					hintText="Enter Email"
 					floatingLabelText="Email"
@@ -44,6 +50,7 @@ class LoginForm extends Component {
           floatingLabelStyle={style.floatingLabelStyle}
           inputStyle={style.inputStyle}
           underlineStyle={style.underlineStyle}
+          onChange={ (e) => this.setState({email: e.target.value}) }
 					/>
 					<br/>
 					<TextField
@@ -55,9 +62,14 @@ class LoginForm extends Component {
           floatingLabelStyle={style.floatingLabelStyle}
           inputStyle={style.inputStyle}
           underlineStyle={style.underlineStyle}
+          onChange={ (e) => this.setState({password: e.target.value}) }
 					/>
 					<br/>
-					<RaisedButton label="Submit" secondary={true} style={style} />
+          <RaisedButton 
+          onClick={() => this.signIn()}
+          label="Submit" 
+          secondary={true} 
+          style={style} />
 				</form>	
 			</MuiThemeProvider>			
 		);
