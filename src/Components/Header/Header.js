@@ -9,6 +9,8 @@ import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import Navigation from './Navigation';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const styles = {
   labelStyle: {
@@ -65,6 +67,9 @@ class Header extends Component {
   render() {
     return (
       <MuiThemeProvider>
+        <Router>
+          <Navigation />
+        </Router>
         <header className='header'>  
           <div>
             <Toggle
