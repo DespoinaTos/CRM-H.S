@@ -23,26 +23,28 @@ class Footer extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>  
-      <Paper zDepth={1}>
-        <BottomNavigation selectedIndex={this.state.selectedIndex}>
-          <BottomNavigationItem
-            label="Recents"
-            icon={recentsIcon}
-            onClick={() => this.select(0)}
-          />
-          <BottomNavigationItem
-            label="Favorites"
-            icon={favoritesIcon}
-            onClick={() => this.select(1)}
-          />
-          <BottomNavigationItem
-            label="Nearby"
-            icon={nearbyIcon}
-            onClick={() => this.select(2)}
-          />
-        </BottomNavigation>
-      </Paper>
+      <MuiThemeProvider>
+        <footer>    
+          <Paper zDepth={1}>
+            <BottomNavigation selectedIndex={this.state.selectedIndex}>
+              <BottomNavigationItem
+                label="Recents"
+                icon={recentsIcon}
+                onClick={() => this.select(0)}
+              />
+              <BottomNavigationItem
+                label="Favorites"
+                icon={favoritesIcon}
+                onClick={() => this.select(1)}
+              />
+              <BottomNavigationItem
+                label="Nearby"
+                icon={nearbyIcon}
+                onClick={() => this.select(2)}
+              />
+            </BottomNavigation>
+          </Paper>
+        </footer>
       </MuiThemeProvider>
     );
   }

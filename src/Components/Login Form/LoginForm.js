@@ -6,9 +6,30 @@ import './Login.css';
 
 const style = {
 	margin: 12,
+	floatingLabelFocusStyle: {
+	  color: '#119EA1'
+  },
+  floatingLabelStyle: {
+    color: 'white'
+  },
+  inputStyle: {
+    color: 'white'
+  },
+  underlineStyle: {
+    borderColor: '#119EA1',
+  },
 };
 
 class LoginForm extends Component {
+
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      email: '',
+      password: '',
+    }
+  }
     
 	render() {
 		return(
@@ -19,13 +40,21 @@ class LoginForm extends Component {
 					floatingLabelText="Email"
 					type="email"
 					className="email"
+          floatingLabelFocusStyle={style.floatingLabelFocusStyle}
+          floatingLabelStyle={style.floatingLabelStyle}
+          inputStyle={style.inputStyle}
+          underlineStyle={style.underlineStyle}
 					/>
 					<br/>
 					<TextField
 					hintText="Enter Password"
 					floatingLabelText="Password"
 					type="password"
-					className="password"
+          className="password"
+          floatingLabelFocusStyle={style.floatingLabelFocusStyle}
+          floatingLabelStyle={style.floatingLabelStyle}
+          inputStyle={style.inputStyle}
+          underlineStyle={style.underlineStyle}
 					/>
 					<br/>
 					<RaisedButton label="Submit" secondary={true} style={style} />

@@ -65,25 +65,27 @@ class Header extends Component {
   render() {
     return (
       <MuiThemeProvider>
-      <div>
-        <Toggle
-          label="Logged"
-          defaultToggled={true}
-          onToggle={this.handleChange}
-          labelPosition="right"
-          style={{margin: 20}}
-          className= 'toggle'
-          labelStyle={styles.labelStyle}
-          thumbSwitchedStyle={styles.thumbSwitched}
-          trackSwitchedStyle={styles.trackSwitched}
-        />
-        <AppBar
-          title="CRM H-S"
-          iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-          iconElementRight={this.state.logged ? <Logged /> : <Login />}
-          className='appbar'
-        />
-      </div>
+        <header className='header'>  
+          <div>
+            <Toggle
+              label="Logged"
+              defaultToggled={true}
+              onToggle={this.handleChange}
+              labelPosition="right"
+              style={{margin: 20}}
+              className= 'toggle'
+              labelStyle={styles.labelStyle}
+              thumbSwitchedStyle={styles.thumbSwitched}
+              trackSwitchedStyle={styles.trackSwitched}
+            />
+            <AppBar
+              title="CRM H-S"
+              iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+              iconElementRight={this.state.logged ? <Logged /> : <Login />}
+              className='appbar'
+            />
+          </div>
+        </header>
       </MuiThemeProvider>
     );
   }

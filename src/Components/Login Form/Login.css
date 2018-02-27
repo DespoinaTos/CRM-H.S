@@ -1,15 +1,20 @@
 .form {
-    margin: 30px;
-    width:100%;
-	margin:auto;
-	max-width:525px;
-    min-height:270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #323A59;
+    width: 40%;
+    min-width: 300px;
+    margin: 30px auto;
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
 }
 
-.email {
-    color: white !important;
+.hr{
+	height:2px;
+	margin:60px 0 50px 0;
+	background:rgba(255,255,255,.2);
 }
-
-.password {
-   
+.foot-lnk{
+	text-align:center;
 }
