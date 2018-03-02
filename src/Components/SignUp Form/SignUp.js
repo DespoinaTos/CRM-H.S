@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import { Link, withRouter } from 'react-router-dom';
 import * as routes from '../../Constants/routes';
 import { auth } from '../../Firebase/firebase';
+import styled from 'styled-components';
 
 const style = {
 	margin: 12,
@@ -21,6 +22,10 @@ const style = {
     borderColor: '#119EA1',
   },
 };
+
+const SignUpL = styled.p`
+color: white;
+`;
 
 const SignUpPage = ({ history }) =>
   <div>
@@ -154,11 +159,11 @@ class SignUp extends Component {
 }
 
 const SignUpLink = () =>
-  <p>
+  <SignUpL>
     Don't have an account?
     {' '}
     <Link to={routes.SIGN_UP}>Sign Up</Link>
-  </p>
+  </SignUpL>
 
 export default withRouter(SignUpPage);
 
