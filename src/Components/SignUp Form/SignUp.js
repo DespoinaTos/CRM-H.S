@@ -91,7 +91,7 @@ class SignUp extends Component {
           <h2>Sign Up</h2>
 					<TextField
 					hintText="Enter Username"
-                    floatingLabelText="Usename"
+                    floatingLabelText="Username"
                     value={username}
 					type="text"
 					className="username"
@@ -142,7 +142,7 @@ class SignUp extends Component {
 					<br/>
             
                     <RaisedButton
-                    
+                    // disabled={isInvalid}
                     type="submit" 
                     label="Submit" 
                     secondary={true} 
@@ -160,8 +160,6 @@ const SignUpLink = () =>
     {' '}
     <Link to={routes.SIGN_UP}>Sign Up</Link>
   </p>
-
-
 
 export default withRouter(SignUpPage);
 
