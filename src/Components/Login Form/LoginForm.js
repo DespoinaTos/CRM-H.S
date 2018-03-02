@@ -27,9 +27,7 @@ const style = {
 
 const SignInPage = ({ history }) =>
   <div>
-    <h1>Sign In</h1>
     <LoginForm history={history} />
-    <SignUpLink />
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -120,6 +118,7 @@ class LoginForm extends Component {
             label="Sign In" 
             secondary={true} 
             style={style} />
+            <SignUpLink />
             { error && <p>{error.message}</p> }
         </form> 
       </MuiThemeProvider>     
