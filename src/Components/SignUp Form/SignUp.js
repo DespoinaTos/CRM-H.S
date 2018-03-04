@@ -160,7 +160,7 @@ class SignUp extends Component {
 					<br/>
             
                     <RaisedButton
-                    // disabled={isInvalid}
+                    disabled={isInvalid}
                     type="submit" 
                     label="Submit" 
                     secondary={true} 
