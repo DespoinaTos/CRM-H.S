@@ -95,46 +95,41 @@ class Header extends Component {
             className='appbar'
           />
           
-          <Router>
-          
+          <Router>  
             <div>
             <Switch> 
-              {/* <Navigation /> */}
-              {/* <hr/> */}
-              <Route
-                exact path={routes.LANDING}
-                component={() => <LandingPage />}
-              />
-              <Route
-                exact path={routes.SIGN_UP}
-                component={() => <SignUpForm />}
-              />
-              <Route
-                exact path={routes.SIGN_IN}
-                component={() => <LoginForm />}
-              />
-              <Route
-                exact path={routes.PASSWORD_FORGET}
-                component={() => <PasswordForget />}
-              />
-              <Route
-                exact path={routes.HOME}
-                component={() => <HomePage />}
-              />
-              <Route
-                exact path={routes.ACCOUNT}
-                component={() => <AccountPage />}
-              />
-              <Route 
-              exact component={NotFound}
-              />
+                {/* <Navigation /> */}
+                {/* <hr/> */}
+                <Route
+                  exact path={routes.LANDING}
+                  component={() => <LandingPage />}
+                />
+                <Route
+                  exact path={routes.SIGN_UP}
+                  component={() => <SignUpForm />}
+                />
+                <Route
+                  exact path={routes.SIGN_IN}
+                  component={() => <LoginForm />}
+                />
+                <Route
+                  exact path={routes.PASSWORD_FORGET}
+                  component={() => <PasswordForget />}
+                />
+                <Route
+                  exact path={routes.HOME}
+                  component={() => <HomePage />}
+                />
+                <Route
+                  exact path={routes.ACCOUNT}
+                  component={() => <AccountPage />}
+                />
+                <Route 
+                exact component={NotFound}
+                />
               </Switch>
-            </div>
-            
+            </div>      
           </Router>
-          
-
-
           </div>
         </header>
       </MuiThemeProvider>
