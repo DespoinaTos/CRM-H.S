@@ -9,8 +9,7 @@ import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import Navigation from './Navigation';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import LandingPage from '../Landing/LandingPage';
 import SignUpForm from '../SignUp Form/SignUp';
 import PasswordForget from '../Password Forget/PasswordForget';
@@ -18,6 +17,7 @@ import HomePage from '../Home/HomePage';
 import AccountPage from '../Account Page/Account';
 import * as routes from '../../Constants/routes';
 import LoginForm from '../Login Form/LoginForm';
+import NotFound from '../NotFound/NotFound';
 
 const styles = {
   labelStyle: {
@@ -73,13 +73,12 @@ class Header extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>
-       
+      <MuiThemeProvider>      
         <header className='header'>  
           <div>
             <Toggle
               label="Logged"
-              defaultToggled={true}
+              defaultToggled={false}
               onToggle={this.handleChange}
               labelPosition="right"
               style={{margin: 20}}
@@ -89,43 +88,51 @@ class Header extends Component {
               trackSwitchedStyle={styles.trackSwitched}
             />
 
-            <AppBar
-              title="CRM H-S"
-              iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-              iconElementRight={this.state.logged ? <Logged /> : <Login />}
-              className='appbar'
-            />
-
-             <Router>
-         <div> 
-          <Navigation />
-          <hr/>
-          <Route
-            exact path={routes.LANDING}
-            component={() => <LandingPage />}
+          <AppBar
+            title="CRM H-S"
+            iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+            iconElementRight={this.state.logged ? <Logged /> : <Login />}
+            className='appbar'
           />
-          <Route
-            exact path={routes.SIGN_UP}
-            component={() => <SignUpForm />}
-          />
-          <Route
-            exact path={routes.SIGN_IN}
-            component={() => <LoginForm />}
-          />
-          <Route
-            exact path={routes.PASSWORD_FORGET}
-            component={() => <PasswordForget />}
-          />
-          <Route
-            exact path={routes.HOME}
-            component={() => <HomePage />}
-          />
-          <Route
-            exact path={routes.ACCOUNT}
-            component={() => <AccountPage />}
-          />
-        </div>
-        </Router>
+          
+          <Router>
+          
+            <div>
+            <Switch> 
+              {/* <Navigation /> */}
+              {/* <hr/> */}
+              <Route
+                exact path={routes.LANDING}
+                component={() => <LandingPage />}
+              />
+              <Route
+                exact path={routes.SIGN_UP}
+                component={() => <SignUpForm />}
+              />
+              <Route
+                exact path={routes.SIGN_IN}
+                component={() => <LoginForm />}
+              />
+              <Route
+                exact path={routes.PASSWORD_FORGET}
+                component={() => <PasswordForget />}
+              />
+              <Route
+                exact path={routes.HOME}
+                component={() => <HomePage />}
+              />
+              <Route
+                exact path={routes.ACCOUNT}
+                component={() => <AccountPage />}
+              />
+              <Route 
+              exact component={NotFound}
+              />
+              </Switch>
+            </div>
+            
+          </Router>
+          
 
 
           </div>

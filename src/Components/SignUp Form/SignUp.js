@@ -6,6 +6,7 @@ import { Link, withRouter } from 'react-router-dom';
 import * as routes from '../../Constants/routes';
 import { auth } from '../../Firebase/firebase';
 import styled from 'styled-components';
+import './SignUp.css';
 
 const style = {
 	margin: 12,
@@ -21,11 +22,20 @@ const style = {
   underlineStyle: {
     borderColor: '#119EA1',
   },
+  hintStyle: {
+    color: '#49537b'
+  },
 };
 
 const SignUpL = styled.p`
 color: white;
+font-size: 14px;
+a {
+  color: white;
+  text-decoration: none;
+}
 `;
+
 
 const SignUpPage = ({ history }) =>
   <div>
@@ -103,6 +113,7 @@ class SignUp extends Component {
                     floatingLabelStyle={style.floatingLabelStyle}
                     inputStyle={style.inputStyle}
                     underlineStyle={style.underlineStyle}
+                    hintStyle={style.hintStyle}
                     onChange={event => this.setState(byPropKey('username', event.target.value))}
 					/>
 					<br/>
@@ -114,6 +125,7 @@ class SignUp extends Component {
 					className="email"
                     floatingLabelFocusStyle={style.floatingLabelFocusStyle}
                     floatingLabelStyle={style.floatingLabelStyle}
+                    hintStyle={style.hintStyle}
                     inputStyle={style.inputStyle}
                     underlineStyle={style.underlineStyle}
                     onChange={event => this.setState(byPropKey('email', event.target.value))}
@@ -128,6 +140,7 @@ class SignUp extends Component {
                     floatingLabelFocusStyle={style.floatingLabelFocusStyle}
                     floatingLabelStyle={style.floatingLabelStyle}
                     inputStyle={style.inputStyle}
+                    hintStyle={style.hintStyle}
                     underlineStyle={style.underlineStyle}
                     onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
                     />
@@ -140,6 +153,7 @@ class SignUp extends Component {
                     floatingLabelFocusStyle={style.floatingLabelFocusStyle}
                     floatingLabelStyle={style.floatingLabelStyle}
                     inputStyle={style.inputStyle}
+                    hintStyle={style.hintStyle}
                     underlineStyle={style.underlineStyle}
                     onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
                     />

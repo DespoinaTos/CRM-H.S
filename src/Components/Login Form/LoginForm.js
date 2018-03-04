@@ -8,6 +8,8 @@ import { SignUpLink } from '../SignUp Form/SignUp';
 import { auth } from '../../Firebase/firebase';
 import * as routes from '../../Constants/routes';
 import { doSignInWithEmailAndPassword } from '../../Firebase/auth';
+import styled from 'styled-components';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 const style = {
   margin: 12,
@@ -22,6 +24,9 @@ const style = {
   },
   underlineStyle: {
     borderColor: '#119EA1',
+  },
+  hintStyle: {
+    color: '#49537b',
   },
 };
 
@@ -84,8 +89,10 @@ class LoginForm extends Component {
 
     return(
       <MuiThemeProvider>
-        <form className='form' onSubmit={this.onSubmit}>
-          <h2>Sign In</h2>
+        <form
+          className='form' 
+          onSubmit={this.onSubmit}>
+          <h2>Login to your account</h2>
           <TextField
           hintText="Enter Email"
           floatingLabelText="Email"
@@ -95,10 +102,10 @@ class LoginForm extends Component {
           floatingLabelStyle={style.floatingLabelStyle}
           inputStyle={style.inputStyle}
           underlineStyle={style.underlineStyle}
+          hintStyle={style.hintStyle}
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           />
-          <br/>
           <TextField
           hintText="Enter Password"
           floatingLabelText="Password"
@@ -108,12 +115,13 @@ class LoginForm extends Component {
           floatingLabelStyle={style.floatingLabelStyle}
           inputStyle={style.inputStyle}
           underlineStyle={style.underlineStyle}
+          hintStyle={style.hintStyle}
           value={password}
           onChange={event => this.setState(byPropKey('password', event.target.value))}
           />
           <br/>
           <RaisedButton
-            // disabled={isInvalid}
+            disabled={isInvalid}
             type="submit" 
             label="Sign In" 
             secondary={true} 
@@ -121,7 +129,8 @@ class LoginForm extends Component {
             <SignUpLink />
             { error && <p>{error.message}</p> }
         </form> 
-      </MuiThemeProvider>     
+      </MuiThemeProvider>
+     
     );
   }
 }

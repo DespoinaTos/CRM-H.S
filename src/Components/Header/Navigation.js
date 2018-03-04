@@ -1,20 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import SignOutButton from '../SignOut/SignOut';
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import SignOutButton from '../SignOut/SignOut';
 
-import * as routes from '../../Constants/routes';
+// import * as routes from '../../Constants/routes';
 
-const Navigation = () =>
-  <div>
-    <ul>
-      <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-      <li><Link to={routes.LANDING}>Landing</Link></li>
-      <li><Link to={routes.HOME}>Home</Link></li>
-      <li><Link to={routes.ACCOUNT}>Account</Link></li>
-      <li><Link to={routes.SIGN_UP}>Sign Up</Link></li>
-      <li><SignOutButton /></li>
+// const Navigation = () =>
+//   <div>
+//     <ul>
+//       <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+//       <li><Link to={routes.LANDING}>Landing</Link></li>
+//       <li><Link to={routes.HOME}>Home</Link></li>
+//       <li><Link to={routes.ACCOUNT}>Account</Link></li>
+//       <li><Link to={routes.SIGN_UP}>Sign Up</Link></li>
+//       <li><SignOutButton /></li>
 
-    </ul>
-  </div>
+//     </ul>
+//   </div>
 
-export default Navigation;
+// export default Navigation;
