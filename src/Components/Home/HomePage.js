@@ -1,8 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const mainContent = styled.div`
+  flex: 1;
+`;
 
 const HomePage = () =>
-  <div>
+  <mainContent>
     <h1>Home Page</h1>
-  </div>
+  </mainContent>
 
 export default HomePage;

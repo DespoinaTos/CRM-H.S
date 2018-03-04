@@ -9,15 +9,7 @@ import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import LandingPage from '../Landing/LandingPage';
-import SignUpForm from '../SignUp Form/SignUp';
-import PasswordForget from '../Password Forget/PasswordForget';
-import HomePage from '../Home/HomePage';
-import AccountPage from '../Account Page/Account';
-import * as routes from '../../Constants/routes';
-import LoginForm from '../Login Form/LoginForm';
-import NotFound from '../NotFound/NotFound';
+
 
 const styles = {
   labelStyle: {
@@ -73,8 +65,8 @@ class Header extends Component {
 
   render() {
     return (
-      <MuiThemeProvider>      
-        <header className='header'>  
+      <MuiThemeProvider className='header'>      
+        <header >  
           <div>
             <Toggle
               label="Logged"
@@ -94,42 +86,6 @@ class Header extends Component {
             iconElementRight={this.state.logged ? <Logged /> : <Login />}
             className='appbar'
           />
-          
-          <Router>  
-            <div>
-            <Switch> 
-                {/* <Navigation /> */}
-                {/* <hr/> */}
-                <Route
-                  exact path={routes.LANDING}
-                  component={() => <LandingPage />}
-                />
-                <Route
-                  exact path={routes.SIGN_UP}
-                  component={() => <SignUpForm />}
-                />
-                <Route
-                  exact path={routes.SIGN_IN}
-                  component={() => <LoginForm />}
-                />
-                <Route
-                  exact path={routes.PASSWORD_FORGET}
-                  component={() => <PasswordForget />}
-                />
-                <Route
-                  exact path={routes.HOME}
-                  component={() => <HomePage />}
-                />
-                <Route
-                  exact path={routes.ACCOUNT}
-                  component={() => <AccountPage />}
-                />
-                <Route 
-                exact component={NotFound}
-                />
-              </Switch>
-            </div>      
-          </Router>
           </div>
         </header>
       </MuiThemeProvider>

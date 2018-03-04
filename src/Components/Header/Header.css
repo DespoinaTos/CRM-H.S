@@ -1,3 +1,7 @@
 .appbar {
     background-color: #119EA1 !important;
 }
+
+.header {
+    flex: 1;
+}
